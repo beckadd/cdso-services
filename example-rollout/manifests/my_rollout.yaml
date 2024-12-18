@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: example-rollout
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-app
+  template:
+    # typical deployment template
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.19.1
+          ports:
+            - containerPort: 80
+  
+  # Rollout config begins here
+  revisionHistoryLimit: 3
+  strategy:
+    blueGreen:
+      # refers to the service that will be used to handle rollout routing
+      activeService: nginx-service
+      

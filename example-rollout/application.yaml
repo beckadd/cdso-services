@@ -1,0 +1,19 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo-rollouts
+  namespace: argo-rollouts
+spec:
+  project: admin
+  destination:
+    namespace: argo-rollouts
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/beckadd/example-cluster
+    path: example-rollout/manifests
+    targetRevision: HEAD # typically you'd want a tagged version
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
