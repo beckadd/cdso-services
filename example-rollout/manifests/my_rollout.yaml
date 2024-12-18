@@ -9,6 +9,9 @@ spec:
   replicas: 3
   template:
     # typical deployment template
+    metadata:
+      labels:
+        app: nginx
     spec:
       containers:
         - name: nginx
