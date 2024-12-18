@@ -2,8 +2,12 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: argocd-cm
+  namespace: argocd
+  labels:
+    app.kubernetes.io/managed-by: argocd
+    app.kubernetes.io/part-of: argocd
 data:
-  application.resourceTrackingMethod: annotation
+  application.resourceTrackingMethod: label+annotation
   resource.exclusions: |
     - apiGroups:
       - "*"
