@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: argocd-cm
+  name: argocd-cm-2
 data:
   application.resourceTrackingMethod: annotation
   resource.exclusions: |
