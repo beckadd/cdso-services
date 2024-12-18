@@ -3,4 +3,5 @@ resources:
 patches:
   - path: ./ui-extension/patch.yaml
     target:
+      kind: Deployment
       name: argocd-server
