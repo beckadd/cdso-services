@@ -3,6 +3,9 @@ kind: Rollout
 metadata:
   name: example-rollout
 spec:
+  selector:
+    matchLabels:
+      app: nginx
   replicas: 3
   template:
     # typical deployment template
