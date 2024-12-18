@@ -9,6 +9,7 @@ metadata:
 spec:
   template:
     spec:
+      restartPolicy: Never
       containers:
         - name: echo
           image: alpine:3.7
