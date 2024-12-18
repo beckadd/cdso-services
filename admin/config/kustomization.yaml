@@ -1,3 +1,4 @@
-patchesStrategicMerge:
-  - ./argo-project-params.yaml
-  - ./argocd-cm.yaml
+kind: Kustomization
+patches:
+  - path: argo-project-params.yaml
+  - path: argocd-cm.yaml
