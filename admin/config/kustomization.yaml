@@ -1,6 +1,6 @@
 resources:
   - ./base
 patches:
-  - path: ui-extension/patch.yaml
+  - path: ./ui-extension/patch.yaml
     target:
       name: argocd-server
