@@ -7,10 +7,10 @@ spec:
     spec:
       initContainers:
         - name: extension-
-          image: quay.io/argoprojlabs/argocd-extension-installer:v0.0.5@sha256:27e72f047298188e2de1a73a1901013c274c4760c92f82e6e46cd5fbd0957c6b
+          image: quay.io/argoprojlabs/argocd-extension-installer:latest
           env:
           - name: EXTENSION_URL
-            value: https://github.com/some-org/somerepo/releases/download/v0.0.1/extension.tar
+            value: https://github.com/argoproj-labs/rollout-extension/releases/download/v0.3.6/extension.tar
           volumeMounts:
             - name: extensions
               mountPath: /tmp/extensions/
