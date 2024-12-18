@@ -8,6 +8,7 @@ spec:
   sourceRepos:
     - "*"
   sourceNamespaces:
+    - "!infrastructure"
     - "*"
   destinations:
     # the admin project is only allowed to manage apps in this cluster.
