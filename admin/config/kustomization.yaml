@@ -1,0 +1,3 @@
+patchesStrategicMerge:
+  - ./argo-project-params.yaml
+  - ./argocd-cm.yaml

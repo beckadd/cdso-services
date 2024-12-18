@@ -2,15 +2,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argo-rollouts
-  namespace: argo-rollouts
+  name: example-rollout
 spec:
-  project: admin
+  project: default
   destination:
-    namespace: argo-rollouts
+    namespace: default
     server: https://kubernetes.default.svc
   source:
-    repoURL: https://github.com/beckadd/example-cluster
+    repoURL: https://github.com/beckadd/cdso-services
     path: example-rollout/manifests
     targetRevision: HEAD # typically you'd want a tagged version
   syncPolicy:
