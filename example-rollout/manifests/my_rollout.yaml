@@ -4,9 +4,6 @@ metadata:
   name: example-rollout
 spec:
   replicas: 3
-  selector:
-    matchLabels:
-      app: nginx-app
   template:
     # typical deployment template
     spec:

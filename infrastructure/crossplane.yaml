@@ -3,7 +3,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: crossplane
-  namespace: infrastructure
+  namespace: argocd
 spec:
   project: infrastructure
   destination:

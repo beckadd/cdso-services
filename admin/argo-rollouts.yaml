@@ -11,9 +11,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: argo-rollouts
-  namespace: argo-rollouts
+  namespace: argocd
 spec:
-  project: admin
+  project: orchestration
   destination:
     namespace: argo-rollouts
     server: https://kubernetes.default.svc

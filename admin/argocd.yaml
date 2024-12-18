@@ -13,7 +13,7 @@ metadata:
   name: argocd
   namespace: argocd
 spec:
-  project: admin
+  project: orchestration
   destination:
     namespace: argocd
     server: https://kubernetes.default.svc

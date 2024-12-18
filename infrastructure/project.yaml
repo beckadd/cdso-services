@@ -7,7 +7,7 @@ spec:
   sourceRepos:
     - "*"
   sourceNamespaces:
-    - infrastructure
+    - "*"
   destinations:
     # the infrastructure project is only allowed to manage apps in this namespace.
     - namespace: infrastructure
