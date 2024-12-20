@@ -16,6 +16,38 @@ spec:
     - repoURL: https://github.com/beckadd/cdso-services
       path: admin/config
       targetRevision: HEAD
+  directory:
+    recurse: true
+  kustomize:
+    - patches:
+        - target:
+            kind: Deployment
+            name: argocd-server
+          patch: |-
+          apiVersion: apps/v1
+          kind: Deployment
+          metadata:
+            name: argocd-server
+          spec:
+            template:
+              spec:
+                initContainers:
+                  - name: extension-installer
+                    image: quay.io/argoprojlabs/argocd-extension-installer:latest
+                    env:
+                    - name: EXTENSION_URL
+                      value: https://github.com/argoproj-labs/rollout-extension/releases/download/v0.3.6/extension.tar
+                    volumeMounts:
+                      - name: extensions
+                        mountPath: /tmp/extensions/
+                    securityContext:
+                      runAsUser: 1000
+                      allowPrivilegeEscalation: false
+                containers:
+                  - name: argocd-server
+                    volumeMounts:
+                      - name: extensions
+                        mountPath: /tmp/extensions/
   syncPolicy:
     automated:
       prune: true
