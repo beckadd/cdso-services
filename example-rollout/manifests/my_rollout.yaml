@@ -8,14 +8,13 @@ spec:
       app: nginx
   replicas: 3
   template:
-    # typical deployment template
     metadata:
       labels:
         app: nginx
     spec:
       containers:
         - name: nginx
-          image: nginx:1.19.1
+          image: nginx:1.19.0
           ports:
             - containerPort: 80
   
@@ -23,6 +22,7 @@ spec:
   revisionHistoryLimit: 3
   strategy:
     blueGreen:
-      # refers to the service that will be used to handle rollout routing
+      # refers to the service that will be used to handle
+      # rollout routing
       activeService: nginx-service
       
