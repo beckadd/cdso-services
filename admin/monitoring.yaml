@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: argo-rollouts
+  name: monitoring
   labels:
     app.kubernetes.io/managed-by: argocd
     app.kubernetes.io/part-of: argocd
@@ -10,17 +10,17 @@ metadata:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argo-rollouts
+  name: monitoring
   namespace: argocd
 spec:
   project: orchestration
   destination:
-    namespace: argo-rollouts
+    namespace: monitoring
     server: https://kubernetes.default.svc
   source:
-    repoURL: https://github.com/argoproj/argo-rollouts
-    path: manifests/cluster-install
-    targetRevision: stable
+    repoURL: https://github.com/prometheus-operator/kube-prometheus
+    path: manifests
+    targetRevision: v0.*
   syncPolicy:
     automated:
       prune: true
