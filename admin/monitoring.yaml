@@ -22,7 +22,7 @@ spec:
       path: manifests
       targetRevision: v0.*
     - repoURL: https://github.com/beckadd/cdso-services
-      path: config/metrics
+      path: admin/metrics
       targetRevision: HEAD
       directory:
         recurse: true
