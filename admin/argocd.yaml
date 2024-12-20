@@ -57,7 +57,7 @@ spec:
                         emptyDir: {}
                     
     - repoURL: https://github.com/beckadd/cdso-services
-      path: admin/config
+      path: admin/argocd
       targetRevision: HEAD
       directory:
         recurse: true
