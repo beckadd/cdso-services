@@ -17,10 +17,15 @@ spec:
   destination:
     namespace: monitoring
     server: https://kubernetes.default.svc
-  source:
-    repoURL: https://github.com/prometheus-operator/kube-prometheus
-    path: manifests
-    targetRevision: v0.*
+  sources:
+    - repoURL: https://github.com/prometheus-operator/kube-prometheus
+      path: manifests
+      targetRevision: v0.*
+    - repoURL: https://github.com/beckadd/cdso-services
+      path: config/metrics
+      targetRevision: HEAD
+      directory:
+        recurse: true
   syncPolicy:
     automated:
       prune: true
