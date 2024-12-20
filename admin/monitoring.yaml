@@ -21,6 +21,8 @@ spec:
     - repoURL: https://github.com/prometheus-operator/kube-prometheus
       path: manifests
       targetRevision: v0.*
+      directory:
+        recurse: true
     - repoURL: https://github.com/beckadd/cdso-services
       path: admin/monitoring
       targetRevision: HEAD
@@ -30,3 +32,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - "ServerSideApply=true"
