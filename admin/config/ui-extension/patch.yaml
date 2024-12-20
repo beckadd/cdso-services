@@ -6,7 +6,7 @@ spec:
   template:
     spec:
       initContainers:
-        - name: extension-
+        - name: extension-installer
           image: quay.io/argoprojlabs/argocd-extension-installer:latest
           env:
           - name: EXTENSION_URL
