@@ -3,7 +3,8 @@ kind: Kustomization
 resources:
   - ./base
 patches:
-  - path: ./ui-extension/patch.yaml
+  - path: ui-extension-patch.yaml
     target:
+      labelSelector: "app.kubernetes.io/name=argocd-server" 
       kind: Deployment
       name: argocd-server
